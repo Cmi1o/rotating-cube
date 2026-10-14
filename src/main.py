@@ -17,7 +17,7 @@ def main() -> None:
         for point in cube.surface_points:
             rotated_point = space_translator.rotate_point(
                 Matrix2D(point), AxisRotationAngles(alpha, beta, theta)
-            )[0]
+            )
             rotated_point = get_rounded_and_shifted_point(rotated_point)
 
             x, y, _ = rotated_point

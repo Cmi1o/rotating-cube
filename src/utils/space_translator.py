@@ -30,14 +30,14 @@ class SpaceTranslator:
 
     def rotate_point(
         self, point: Matrix2D[int], angles: AxisRotationAngles
-    ) -> Matrix2D[TNumber]:
+    ) -> list[TNumber]:
         if not self.is_point(point):
             raise PointSizeException()
 
         x_rads, y_rads, z_rads = map(radians, angles)
 
         # do NOT change the order of multiplication
-        return point * Rx(x_rads) * Ry(y_rads) * Rz(z_rads)
+        return (point * Rx(x_rads) * Ry(y_rads) * Rz(z_rads))[0]
 
 
 space_translator = SpaceTranslator()
