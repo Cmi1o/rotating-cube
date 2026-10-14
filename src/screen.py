@@ -30,12 +30,8 @@ class Screen:
         ]
 
     def __str__(self) -> str:
-        new_screen = ''
-
-        for i in range(len(self._screen)):
-            new_screen += ' '.join(self._screen[i]) + '\n'
-
-        return f'{new_screen}'
+        # in ' '.join(row) for row in self._screen we use ' ' to increase figures on the screen size
+        return '\n'.join(' '.join(row) for row in self._screen)
 
     def clear(self) -> None:
         for i in range(len(self._screen)):
