@@ -1,11 +1,13 @@
 import os
+import subprocess
 
 import constants as consts
 from matrix import TNumber
 
 
 def clear_terminal() -> None:
-    os.system('cls' if os.name == 'nt' else 'clear')
+    command = ['cmd', '/c', 'cls'] if os.name == 'nt' else ['clear']
+    subprocess.run(command, check=False)
 
 
 def get_rounded_and_shifted_point(point: list[TNumber]) -> list[int]:
